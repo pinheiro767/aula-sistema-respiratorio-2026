@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#020617">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Atlas Respiratório PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div id="app" class="app-shell">
+    <section id="home" class="home screen active">
+      <div class="hero-card">
+        <div class="hero-content">
+          <p class="eyebrow">Universidade Estadual de Maringá • Anatomia Humana</p>
+          <h1>Atlas Respiratório</h1>
+          <p class="subtitle">PWA imersivo com slides de 1.png a 25.png, zoom total, comando de voz, áudio, anotações e PDF sem cortes.</p>
+          <div class="hero-actions">
+            <button class="primary" id="startBtn">Iniciar Atlas</button>
+            <button class="secondary" id="installBtn" hidden>Baixar App</button>
+            <button class="secondary" id="pdfHomeBtn">Gerar PDF</button>
+          </div>
+        </div>
+        <div class="lung-visual">🫁</div>
+      </div>
+
+      <div class="feature-grid">
+        <article><strong>25 slides</strong><span>Imagens numeradas de 1.png até 25.png.</span></article>
+        <article><strong>Zoom total</strong><span>Ampliar, reduzir, arrastar e tela cheia.</span></article>
+        <article><strong>Comando de voz</strong><span>Próxima imagem, anterior, ampliar, reduzir e PDF.</span></article>
+        <article><strong>PDF acadêmico</strong><span>Uma imagem por página, sem corte, com observações.</span></article>
+      </div>
+    </section>
+
+    <section id="viewer" class="viewer screen">
+      <header class="topbar">
+        <button class="icon" id="backHomeBtn">⌂</button>
+        <div class="title-box">
+          <span>Sistema Respiratório</span>
+          <strong id="slideLabel">Imagem 1 de 25</strong>
+        </div>
+        <button class="icon" id="voiceBtn">🎙️</button>
+      </header>
+
+      <main class="stage-wrap">
+        <button class="nav left" id="prevBtn">‹</button>
+        <div class="stage" id="stage">
+          <img id="slideImage" src="imagens/1.png" alt="Imagem 1">
+        </div>
+        <button class="nav right" id="nextBtn">›</button>
+      </main>
+
+      <section class="toolbar">
+        <button id="zoomOutBtn">🔍−</button>
+        <button id="zoomInBtn">🔍+</button>
+        <button id="resetZoomBtn">🔄 Resetar</button>
+        <button id="fullBtn">⛶ Tela cheia</button>
+        <button id="readBtn">🔊 Ler</button>
+        <button id="pdfBtn">📄 PDF</button>
+      </section>
+
+      <section class="notes-panel">
+        <div class="note-head">
+          <h2 id="noteTitle">Observações da imagem 1</h2>
+          <div class="checks">
+            <label><input type="checkbox" id="identifiedCheck"> Identificada</label>
+            <label><input type="checkbox" id="reviewedCheck"> Revisada</label>
+            <label><input type="checkbox" id="examCheck"> Cai na prova</label>
+          </div>
+        </div>
+        <textarea id="noteText" placeholder="Digite as informações anatômicas, estruturas identificadas, relações, funções e observações da prática..."></textarea>
+      </section>
+
+      <footer class="thumb-strip" id="thumbStrip"></footer>
+    </section>
+  </div>
+
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="voice.js"></script>
+  <script src="pdf.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

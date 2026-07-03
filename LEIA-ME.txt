@@ -1,0 +1,21 @@
+ATLAS RESPIRATÓRIO PWA — VERSÃO FINAL
+
+1. Coloque suas imagens dentro da pasta imagens/ com os nomes:
+   1.png, 2.png, 3.png ... até 25.png
+
+2. Para funcionar como PWA, publique no GitHub Pages, Netlify, Render ou outro servidor HTTPS.
+
+3. Comandos de voz suportados:
+   - próxima imagem
+   - imagem anterior
+   - ampliar
+   - reduzir
+   - resetar
+   - gerar PDF
+   - baixar app
+   - ler observação
+   - limpar
+
+4. O PDF é gerado com uma imagem por página, sem corte, junto com as observações.
+
+5. O app salva automaticamente as observações no navegador usando localStorage.

@@ -1,0 +1,14 @@
+{
+  "name": "Atlas Respiratório PWA",
+  "short_name": "Respiratório",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "orientation": "any",
+  "icons": [
+    { "src": "imagens/1.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "imagens/1.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
